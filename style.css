@@ -48,6 +48,80 @@ header, main, footer {
     padding: 1.2em 0;
 }
 
+/* --- Footer collé en bas --- */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #111; /* couleur sombre pour contraste */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* --- Conteneur pour centrer le bouton de déconnexion --- */
+.logout-container {
+    position: fixed;
+    bottom: 100px; /* distance depuis le bas, ajuste selon le rendu */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* au-dessus du reste */
+}
+
+/* Style bouton déconnexion dans ce conteneur */
+.logout-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logout-container button:hover {
+    filter: brightness(1.2);
+}
+
+
+.center-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* ajuste selon ton besoin */
+    text-align: center;
+    background-color: #1c1c1c; /* optionnel pour différencier la zone */
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    display: block;
+    padding: 12px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #c0392b;
+}
+
 /* --- Header logo et titre --- */
 .header-content {
     display: flex;
@@ -196,4 +270,27 @@ button:hover {
 
 #logoutBtn { 
     background:#d73a49; 
+}
+
+.home-btn-container {
+    position: fixed;
+    bottom: 100px; /* distance depuis le bas, ajuste selon le rendu */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.home-btn-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.home-btn-container button:hover {
+    filter: brightness(1.2);
 }

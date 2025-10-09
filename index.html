@@ -25,9 +25,9 @@
     <div class="header-content">
         <img src="img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
         <div class="header-text">
-            <h1>Bienvenue sur l’Intranet Collaboratif</h1>
-            <p>Un espace partagé où chacun peut modifier le site librement.</p>
+            <h1>Bienvenue sur l’Intranet de l'Akakatsuki</h1>
         </div>
+        <img src="img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
     </div>
     <div class="header-actions">
         <button id="logoutBtn" style="display:none;">Se déconnecter</button>
@@ -35,32 +35,18 @@
 </header>
 
 <main>
-    <section id="intro">
-        <h2>À propos</h2>
-        <p>
-            Ce site est hébergé sur <strong>GitHub Pages</strong> et tout le monde peut contribuer.
-        </p>
-    </section>
-
-    <section id="notes">
-        <h2>Notes collaboratives</h2>
-        <textarea id="sharedNotes" placeholder="Écris quelque chose ici..."></textarea>
-        <button onclick="saveNotes()">💾 Sauvegarder (localement)</button>
-        <p class="hint">(Les notes sont sauvegardées uniquement dans ton navigateur pour l’instant.)</p>
-    </section>
+    <div class="center-buttons">
+        <div class="buttons-container">
+            <a href="membres.html" class="nav-btn">Membres de l'Akatsuki</a>
+        </div>
+    </div>
 </main>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="membres.html">Les Membres de l'Akatsuki</a></li>
-        <!-- Autres liens -->
-    </ul>
-</nav>
-
-<button onclick="sessionStorage.removeItem('intranet_auth_ok_v2'); window.location.href='login.html';">
-    Se déconnecter
-</button>
+<div class="logout-container">
+    <button onclick="sessionStorage.removeItem('intranet_auth_ok_v2'); window.location.href='login.html';">
+        Se déconnecter
+    </button>
+</div>
 
 <footer>
     <p>&copy; 2025 Akakatsuki Intranet</p>

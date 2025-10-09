@@ -1,3 +1,4 @@
+/* --- styles de base existants --- */
 body {
     font-family: system-ui, sans-serif;
     background: #f6f8fa;
@@ -42,11 +43,67 @@ button {
     cursor: pointer;
 }
 
+button.secondary {
+    background: #6c757d;
+}
+
 button:hover {
-    background: #218838;
+    filter: brightness(0.95);
 }
 
 .hint {
     font-size: 0.9em;
     color: gray;
 }
+
+/* --- modal (popup) --- */
+.modal {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    display: none; /* visible via JS */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+}
+
+.modal[aria-hidden="false"] {
+    display: flex;
+}
+
+.modal-panel {
+    background: #fff;
+    width: 95%;
+    max-width: 420px;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+
+.modal-panel h2 {
+    margin-top: 0;
+    color: #24292f;
+}
+
+.modal-panel label { display:block; margin-top:0.75rem; font-weight:600; }
+.modal-panel input {
+    width:100%;
+    padding:0.5rem;
+    margin-top:0.25rem;
+    box-sizing:border-box;
+    border: 1px solid #d0d7de;
+    border-radius:6px;
+}
+
+.modal-row {
+    display:flex;
+    gap:0.5rem;
+    margin-top:1rem;
+    justify-content:flex-end;
+}
+
+.error { color:#b00020; margin-top:0.6rem; }
+
+/* header actions */
+.header-actions { position:absolute; top:12px; right:12px; }
+#logoutBtn { background:#d73a49; }

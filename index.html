@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet Akatsuki</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Intranet Collaboratif</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Modal login (popup) -->
+<div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-panel" role="document">
+        <h2 id="modalTitle">Connexion</h2>
+        <p>Entrez vos identifiants pour accéder à l’intranet.</p>
+
+        <label for="modalUser">Identifiant</label>
+        <input id="modalUser" type="text" autocomplete="username" />
+
+        <label for="modalPwd">Mot de passe</label>
+        <input id="modalPwd" type="password" autocomplete="current-password" />
+
+        <div class="modal-row">
+            <button id="modalSubmit">Se connecter</button>
+            <button id="modalCancel" class="secondary">Annuler</button>
+        </div>
+
+        <p id="modalMsg" class="error" aria-live="polite"></p>
+    </div>
+</div>
+
 <header>
     <h1>Bienvenue sur l’Intranet Collaboratif</h1>
     <p>Un espace partagé où chacun peut modifier le site librement.</p>
+    <div class="header-actions">
+        <button id="logoutBtn" style="display:none;">Se déconnecter</button>
+    </div>
 </header>
 
 <main>
     <section id="intro">
         <h2>À propos</h2>
         <p>
-            Ce site est hébergé sur <strong>GitHub Pages</strong> et tout le monde peut contribuer.<br>
-            Modifiez simplement les fichiers <code>index.html</code>, <code>style.css</code> ou <code>script.js</code>
-            pour changer le contenu et la mise en page !
+            Ce site est hébergé sur <strong>GitHub Pages</strong> et tout le monde peut contribuer.
         </p>
     </section>
 

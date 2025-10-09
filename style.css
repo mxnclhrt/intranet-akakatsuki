@@ -6,23 +6,38 @@ body {
     margin: 0;
     padding: 0;
 
-    /* logos Akatsuki */
+    /* logos Akatsuki - UNE VINGTAINE DE NUAGES MAINTENANT ! */
     background-image: 
-        url('img/Akatsuki-Logo.png'),
-        url('img/Akatsuki-Logo.png'),
-        url('img/Akatsuki-Logo.png'),
-        url('img/Akatsuki-Logo.png'),
-        url('img/Akatsuki-Logo.png');
+        url('img/Akatsuki-Logo.png'), /* 1 */
+        url('img/Akatsuki-Logo.png'), /* 2 */
+        url('img/Akatsuki-Logo.png'), /* 3 */
+        url('img/Akatsuki-Logo.png'), /* 4 */
+        url('img/Akatsuki-Logo.png'), /* 5 */
+        url('img/Akatsuki-Logo.png'), /* 6 */
+        url('img/Akatsuki-Logo.png'), /* 7 */
+        url('img/Akatsuki-Logo.png'), /* 8 */
+        url('img/Akatsuki-Logo.png'), /* 9 */
+        url('img/Akatsuki-Logo.png'), /* 10 */
+        url('img/Akatsuki-Logo.png'), /* 11 */
+        url('img/Akatsuki-Logo.png'), /* 12 */
+        url('img/Akatsuki-Logo.png'), /* 13 */
+        url('img/Akatsuki-Logo.png'), /* 14 */
+        url('img/Akatsuki-Logo.png'), /* 15 */
+        url('img/Akatsuki-Logo.png'), /* 16 */
+        url('img/Akatsuki-Logo.png'), /* 17 */
+        url('img/Akatsuki-Logo.png'), /* 18 */
+        url('img/Akatsuki-Logo.png'), /* 19 */
+        url('img/Akatsuki-Logo.png'); /* 20 */
     
     background-repeat: no-repeat;
+    /* 20 positions dispersées */
     background-position: 
-        5% 5%,   /* haut gauche */
-        85% 10%, /* haut droite */
-        10% 70%, /* bas gauche */
-        75% 60%, /* milieu droite */
-        50% 90%; /* bas centre */
+        5% 5%, 85% 10%, 10% 70%, 75% 60%, 50% 90%, 
+        20% 40%, 90% 30%, 40% 15%, 60% 80%, 15% 95%, 
+        30% 55%, 70% 20%, 5% 45%, 95% 75%, 35% 5%,
+        65% 95%, 45% 30%, 25% 85%, 80% 45%, 55% 65%;
     
-    background-size: 80px auto; /* largeur fixe, hauteur proportionnelle */
+    background-size: 80px auto; /* Maintient la taille pour ne pas trop surcharger */
 }
 
 /* --- Header / Footer / Main avec transparence --- */
@@ -182,4 +197,3 @@ button:hover {
 #logoutBtn { 
     background:#d73a49; 
 }
-

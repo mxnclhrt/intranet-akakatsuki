@@ -7,26 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Modal login (popup) -->
-<div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-panel" role="document">
-        <h2 id="modalTitle">Connexion</h2>
-        <p>Entrez vos identifiants pour accéder à l’intranet.</p>
-
-        <label for="modalUser">Identifiant</label>
-        <input id="modalUser" type="text" autocomplete="username" />
-
-        <label for="modalPwd">Mot de passe</label>
-        <input id="modalPwd" type="password" autocomplete="current-password" />
-
-        <div class="modal-row">
-            <button id="modalSubmit">Se connecter</button>
-            <button id="modalCancel" class="secondary">Annuler</button>
-        </div>
-
-        <p id="modalMsg" class="error" aria-live="polite"></p>
-    </div>
-</div>
+<script>
+    const SESSION_KEY = "intranet_auth_ok_v2";
+    if(!sessionStorage.getItem(SESSION_KEY)){
+        // non connecté → redirection vers login.html
+        window.location.href = "login.html";
+    }
+</script>
 
 <header>
     <h1>Bienvenue sur l’Intranet Collaboratif</h1>
@@ -51,6 +38,11 @@
         <p class="hint">(Les notes sont sauvegardées uniquement dans ton navigateur pour l’instant.)</p>
     </section>
 </main>
+
+<button onclick="sessionStorage.removeItem('intranet_auth_ok_v2'); window.location.href='login.html';">
+    Se déconnecter
+</button>
+
 
 <footer>
     <p>🧠 Projet intranet collaboratif – propulsé par GitHub Pages</p>

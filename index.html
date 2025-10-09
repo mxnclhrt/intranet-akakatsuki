@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet Collaboratif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Bienvenue sur l’Intranet Collaboratif</h1>
+    <p>Un espace partagé où chacun peut modifier le site librement.</p>
+</header>
+
+<main>
+    <section id="intro">
+        <h2>À propos</h2>
+        <p>
+            Ce site est hébergé sur <strong>GitHub Pages</strong> et tout le monde peut contribuer.<br>
+            Modifiez simplement les fichiers <code>index.html</code>, <code>style.css</code> ou <code>script.js</code>
+            pour changer le contenu et la mise en page !
+        </p>
+    </section>
+
+    <section id="notes">
+        <h2>Notes collaboratives</h2>
+        <textarea id="sharedNotes" placeholder="Écris quelque chose ici..."></textarea>
+        <button onclick="saveNotes()">💾 Sauvegarder (localement)</button>
+        <p class="hint">(Les notes sont sauvegardées uniquement dans ton navigateur pour l’instant.)</p>
+    </section>
+</main>
+
+<footer>
+    <p>🧠 Projet intranet collaboratif – propulsé par GitHub Pages</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

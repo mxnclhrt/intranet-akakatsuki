@@ -1,69 +1,125 @@
-/* --- styles de base existants --- */
+/* --- Body avec logos Akatsuki en arrière-plan --- */
 body {
     font-family: system-ui, sans-serif;
-    background: #f6f8fa;
+    background-color: #1a1a1a;
+    color: #eee;
     margin: 0;
     padding: 0;
+
+    /* logos Akatsuki */
+    background-image: 
+        url('img/Akatsuki-Logo.png'),
+        url('img/Akatsuki-Logo.png'),
+        url('img/Akatsuki-Logo.png'),
+        url('img/Akatsuki-Logo.png'),
+        url('img/Akatsuki-Logo.png');
+    
+    background-repeat: no-repeat;
+    background-position: 
+        5% 5%,   /* haut gauche */
+        85% 10%, /* haut droite */
+        10% 70%, /* bas gauche */
+        75% 60%, /* milieu droite */
+        50% 90%; /* bas centre */
+    
+    background-size: 80px auto; /* largeur fixe, hauteur proportionnelle */
 }
 
-header, footer {
-    background: #24292f;
-    color: white;
+/* --- Header / Footer / Main avec transparence --- */
+header, main, footer {
+    background: rgba(13, 13, 13, 0.85); /* légèrement transparent pour voir logos */
+    color: #f44336;
     text-align: center;
-    padding: 1em 0;
+    padding: 1.2em 0;
 }
 
+/* --- Header logo et titre --- */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #f44336;
+}
+
+.header-text p {
+    margin: 4px 0 0;
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+/* --- Main content --- */
 main {
     max-width: 800px;
     margin: 2em auto;
-    background: white;
+    background: rgba(31, 31, 31, 0.85); /* fondu semi-transparent pour voir logos */
     padding: 2em;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
 }
 
+/* --- Titres --- */
 h1, h2 {
-    color: #0366d6;
+    color: #f44336;
 }
 
+/* --- Textarea --- */
 textarea {
     width: 100%;
     height: 150px;
     margin: 0.5em 0;
     padding: 0.5em;
     font-family: monospace;
+    background: #2a2a2a;
+    border: 1px solid #f44336;
+    color: #fff;
+    border-radius: 6px;
 }
 
+/* --- Buttons --- */
 button {
-    background: #28a745;
+    background: #f44336;
     color: white;
     border: none;
     padding: 0.6em 1.2em;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button.secondary {
-    background: #6c757d;
+    background: #555;
 }
 
 button:hover {
-    filter: brightness(0.95);
+    filter: brightness(1.2);
 }
 
+/* --- Hints --- */
 .hint {
     font-size: 0.9em;
-    color: gray;
+    color: #aaa;
 }
 
-/* --- modal (popup) --- */
+/* --- Modales / Popup --- */
 .modal {
     position: fixed;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
-    display: none; /* visible via JS */
+    inset: 0;
+    display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.85);
     z-index: 1000;
 }
 
@@ -72,27 +128,36 @@ button:hover {
 }
 
 .modal-panel {
-    background: #fff;
+    background: rgba(42, 42, 42, 0.95);
     width: 95%;
     max-width: 420px;
     padding: 1.25rem;
     border-radius: 10px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+    border: 2px solid #f44336;
 }
 
 .modal-panel h2 {
     margin-top: 0;
-    color: #24292f;
+    color: #f44336;
 }
 
-.modal-panel label { display:block; margin-top:0.75rem; font-weight:600; }
+.modal-panel label { 
+    display:block; 
+    margin-top:0.75rem; 
+    font-weight:600; 
+    color: #eee;
+}
+
 .modal-panel input {
     width:100%;
     padding:0.5rem;
     margin-top:0.25rem;
     box-sizing:border-box;
-    border: 1px solid #d0d7de;
+    border: 1px solid #f44336;
     border-radius:6px;
+    background: #1f1f1f;
+    color: #fff;
 }
 
 .modal-row {
@@ -102,8 +167,19 @@ button:hover {
     justify-content:flex-end;
 }
 
-.error { color:#b00020; margin-top:0.6rem; }
+.error { 
+    color:#ff5555; 
+    margin-top:0.6rem; 
+}
 
-/* header actions */
-.header-actions { position:absolute; top:12px; right:12px; }
-#logoutBtn { background:#d73a49; }
+/* --- Header actions --- */
+.header-actions { 
+    position:absolute; 
+    top:12px; 
+    right:12px; 
+}
+
+#logoutBtn { 
+    background:#d73a49; 
+}
+

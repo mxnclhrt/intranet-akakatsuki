@@ -10,14 +10,25 @@
 <script>
     const SESSION_KEY = "intranet_auth_ok_v2";
     if(!sessionStorage.getItem(SESSION_KEY)){
-        // non connecté → redirection vers login.html
         window.location.href = "login.html";
     }
 </script>
 
+<!-- Logos Akatsuki en arrière-plan -->
+<div class="akatsuki-logo logo1"></div>
+<div class="akatsuki-logo logo2"></div>
+<div class="akatsuki-logo logo3"></div>
+<div class="akatsuki-logo logo4"></div>
+<div class="akatsuki-logo logo5"></div>
+
 <header>
-    <h1>Bienvenue sur l’Intranet Collaboratif</h1>
-    <p>Un espace partagé où chacun peut modifier le site librement.</p>
+    <div class="header-content">
+        <img src="img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
+        <div class="header-text">
+            <h1>Bienvenue sur l’Intranet Collaboratif</h1>
+            <p>Un espace partagé où chacun peut modifier le site librement.</p>
+        </div>
+    </div>
     <div class="header-actions">
         <button id="logoutBtn" style="display:none;">Se déconnecter</button>
     </div>
@@ -43,7 +54,6 @@
     Se déconnecter
 </button>
 
-
 <footer>
     <p>🧠 Projet intranet collaboratif – propulsé par GitHub Pages</p>
 </footer>
@@ -51,3 +61,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+

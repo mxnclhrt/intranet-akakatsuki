@@ -1,49 +1,60 @@
-/* --- Body avec logos Akatsuki en arrière-plan --- */
+/* --- Body avec logos Akatsuki en arrière-plan (pour TOUTES les pages) --- */
 body {
-    /* 20 nuages en arrière-plan */
     font-family: system-ui, sans-serif;
     background-color: #1a1a1a;
     color: #eee;
     margin: 0;
     padding: 0;
 
-    /* Configuration pour le pied de page fixe */
     min-height: 100vh;
     position: relative; 
-
-    /* logos Akatsuki - UNE VINGTAINE DE NUAGES MAINTENANT ! */
+    
+    /* 15 NUAGES EN FOND (Le 16ème est le lien cliquable en HTML, à 5% 5%) */
     background-image: 
-        url('img/Akatsuki-Logo.png'), /* 1 */
-        url('img/Akatsuki-Logo.png'), /* 2 */
-        url('img/Akatsuki-Logo.png'), /* 3 */
-        url('img/Akatsuki-Logo.png'), /* 4 */
-        url('img/Akatsuki-Logo.png'), /* 5 */
-        url('img/Akatsuki-Logo.png'), /* 6 */
-        url('img/Akatsuki-Logo.png'), /* 7 */
-        url('img/Akatsuki-Logo.png'), /* 8 */
-        url('img/Akatsuki-Logo.png'), /* 9 */
-        url('img/Akatsuki-Logo.png'), /* 10 */
-        url('img/Akatsuki-Logo.png'), /* 11 */
-        url('img/Akatsuki-Logo.png'), /* 12 */
-        url('img/Akatsuki-Logo.png'), /* 13 */
-        url('img/Akatsuki-Logo.png'), /* 14 */
-        url('img/Akatsuki-Logo.png'), /* 15 */
-        url('img/Akatsuki-Logo.png'), /* 16 */
-        url('img/Akatsuki-Logo.png'), /* 17 */
-        url('img/Akatsuki-Logo.png'), /* 18 */
-        url('img/Akatsuki-Logo.png'), /* 19 */
-        url('img/Akatsuki-Logo.png'); /* 20 */
+        url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'),
+        url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), 
+        url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), 
+        url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), 
+        url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'); /* 15 URLs */
     
     background-repeat: no-repeat;
-    /* 20 positions dispersées */
-    background-position: 
-        5% 5%, 85% 10%, 10% 70%, 75% 60%, 50% 90%, 
-        20% 40%, 90% 30%, 40% 15%, 60% 80%, 15% 95%, 
-        30% 55%, 70% 20%, 5% 45%, 95% 75%, 35% 5%,
-        65% 95%, 45% 30%, 25% 85%, 80% 45%, 55% 65%;
     
-    background-size: 80px auto;
+    /* 15 positions dispersées (la position 5% 5% est absente) */
+    background-position: 
+        70% 85%, 10% 70%, 60% 60%, 50% 90%, 
+        20% 40%, 90% 30%, 40% 15%, 85% 10%, 15% 95%, 
+        30% 55%, 70% 20%, 5% 45%, 95% 75%, 35% 5%,
+        65% 95%; 
+    
+    background-size: 80px auto; /* Taille des nuages de fond */
 }
+
+/* ========================================================== */
+/* STYLE DU NUAGE CLICQUABLE (Positionné séparément) */
+/* ========================================================== */
+.clickable-cloud {
+    position: fixed; 
+    /* ASSUREZ-VOUS QUE LA TAILLE EST DÉFINIE ! */
+    width: 80px; 
+    height: 80px; 
+    
+    /* VÉRIFIEZ LE CHEMIN VERS L'IMAGE ! */
+    background-image: url('img/Akatsuki-Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    filter: none; 
+    z-index: 10; 
+
+    /* La position que vous avez choisie */
+    top: 85%; /* Exemple: Bas-Gauche */
+    left: 10%;
+    
+    display: block;
+    cursor: pointer;
+    text-indent: -9999px; 
+}
+
 
 /* --- Header / Footer / Main avec transparence --- */
 header, main, footer {
@@ -51,6 +62,9 @@ header, main, footer {
     color: #f44336;
     text-align: center;
     padding: 1.2em 0;
+    /* Assure que le contenu est au-dessus des nuages */
+    position: relative;
+    z-index: 100;
 }
 
 /* --- Footer collé en bas --- */
@@ -65,9 +79,9 @@ footer {
     z-index: 1000;
 }
 
-/* --- Main content (Élargi pour 4 cartes) --- */
+/* --- Main content --- */
 main {
-    max-width: 1200px; /* Largeur pour contenir 4 cartes confortablement */
+    max-width: 1200px; 
     margin: 2em auto 60px; 
     background: rgba(31, 31, 31, 0.85);
     padding: 2em;
@@ -102,7 +116,7 @@ main {
     font-size: 0.95em;
 }
 
-/* --- Conteneur pour centrer les boutons (Page Index) --- */
+/* --- Conteneur pour centrer les boutons (Page Index / Secret) --- */
 .center-buttons {
     display: flex;
     flex-direction: column;
@@ -252,7 +266,7 @@ button:hover {
     background:#d73a49; 
 }
 
-/* --- Bouton de retour à l'accueil (sur la page members) --- */
+/* --- Bouton de retour à l'accueil (sur la page members et secret) --- */
 .home-btn-container {
     text-align: center;
     margin: 20px 0 60px;
@@ -274,6 +288,31 @@ button:hover {
 }
 
 /* ========================================================== */
+/* STYLES SPÉCIFIQUES À SECRET.HTML */
+/* ========================================================== */
+.logo-secret {
+    width: 80px; /* Taille réduite */
+    height: auto;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite; 
+    filter: drop-shadow(0 0 10px #f44336);
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ========================================================== */
 /* STYLES POUR LES CARTES MEMBRES (PAGE members.html) */
 /* ========================================================== */
 
@@ -288,12 +327,10 @@ button:hover {
 }
 
 .member {
-    /* FOND OPAQUE */
     background: #2a2a2a; 
     border: 3px solid #f44336;
     border-radius: 12px;
     padding: 15px;
-    /* Calcul pour 4 cartes par ligne */
     width: calc(25% - 15px); 
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -302,16 +339,11 @@ button:hover {
 
 .member img {
     width: 100%;
-    /* IMAGE PLUS GRANDE */
     height: 200px; 
-    
     border-radius: 8px;
     margin-bottom: 10px;
-    
-    /* MODIFICATION CLÉ : AFFICHE L'IMAGE ENTIÈREMENT SANS LA COUPER */
     object-fit: contain; 
     background-color: black; 
-    
     border: 1px solid #555;
 }
 
@@ -321,7 +353,6 @@ button:hover {
     font-size: 1.3em; 
 }
 
-/* Style de la ligne d'information simple */
 .member p {
     margin: 5px 0;
     text-align: left;
@@ -333,7 +364,6 @@ button:hover {
     color: #ccc;
 }
 
-/* STYLES POUR LA LISTE DE PALMARÈS */
 .member ul {
     list-style: none; 
     padding-left: 0;

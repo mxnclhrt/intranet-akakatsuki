@@ -6,7 +6,7 @@ const SESSION_KEY = "intranet_auth_ok_v2";
  */
 function requireAuth() {
 	if (!sessionStorage.getItem(SESSION_KEY)) {
-		window.location.href = "../html/login.html";
+		window.location.href = "src/html/login.html";
 	}
 }
 

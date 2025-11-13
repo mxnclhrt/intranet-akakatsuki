@@ -1,3 +1,11 @@
+/* Styles spécifiques pour centrer la boîte de connexion et l'adapter au thème sombre */
+body { 
+	display:flex; 
+	justify-content:center; 
+	align-items:center; 
+	height:100vh; 
+}
+
 /* Ajustement de la boîte de connexion pour le thème Akatsuki */
 .login-box { 
 	background: rgba(31, 31, 31, 0.95); /* Fond sombre, légèrement transparent */

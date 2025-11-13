@@ -54,6 +54,17 @@
 	<p>&copy; 2025 Akatsuki Intranet</p>
 </footer>
 
+<script>
+	const buttons = document.querySelectorAll(".group-btn");
+	buttons.forEach(btn => {
+	btn.addEventListener("click", () => {
+		buttons.forEach(b => b.classList.remove("selected"));
+		btn.classList.add("selected");
+		console.log("Groupe choisi :", btn.dataset.groupe);
+		// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
+	});
+	});
+</script>
 
 <script>
 	async function loadICS() {

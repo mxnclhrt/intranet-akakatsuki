@@ -69,7 +69,7 @@
 
 <script>
 	async function loadICS() {
-		const res = await fetch('../emploi-du-temps/emploi.ics');
+		const res = await fetch('../emploi-du-temps/emploi-du-temps-G2.ics');
 		const icsText = await res.text();
 		const events = parseICS(icsText);
 		return events.sort((a, b) => a.start - b.start);

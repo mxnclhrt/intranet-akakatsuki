@@ -8,17 +8,17 @@
 	<script>
 		const SESSION_KEY = "intranet_auth_ok_v2";
 		if(!sessionStorage.getItem(SESSION_KEY)){
-			window.location.href = "./src/html/login.html";
+			window.location.href = "login.html";
 		}
 	</script>
 
-	<link rel="icon" type="image/png" href="./src/img/Akatsuki-Logo.svg"/>
-	<link rel="stylesheet" href="./src/css/style.css">
-	<link rel="stylesheet" href="./src/css/style-calendrier.css">
+	<link rel="icon" type="image/png" href="../img/Akatsuki-Logo.svg"/>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/style-calendrier.css">
 </head>
 <body>
 
-<a href="./src/html/secret.html" class="clickable-cloud" aria-label="Lien caché vers la base secrète"></a>
+<a href="secret.html" class="clickable-cloud" aria-label="Lien caché vers la base secrète"></a>
 
 <header>
 	<div class="header-content">
@@ -32,7 +32,7 @@
 <main>
 	<div class="group-buttons">
 		<button class="group-btn selected" data-groupe="INFOG1">G1</button>
-		<button class="group-btn" data-groupe="INFOG2">G2</button>
+		<button class="group-btn"          data-groupe="INFOG2">G2</button>
 	</div>
 
 	<div class="controls">
@@ -60,7 +60,7 @@
 
 
 <div class="home-btn-container">
-	<button onclick="window.location.href='./../../index.html';">
+	<button onclick="window.location.href='../../index.html';">
 		Accueil de l'Intranet
 	</button>
 </div>
@@ -71,7 +71,7 @@
 
 <script>
 	async function loadICS() {
-		const res = await fetch('./emploi-du-temps/emploi.ics');
+		const res = await fetch('../emploi-du-temps/emploi.ics');
 		const icsText = await res.text();
 		const events = parseICS(icsText);
 		return events.sort((a, b) => a.start - b.start);

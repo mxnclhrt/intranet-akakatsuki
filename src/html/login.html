@@ -35,7 +35,7 @@
 		msg.textContent = "";
 		if(user===ALLOWED_LOGIN && pwd===ALLOWED_PASSWORD){
 			sessionStorage.setItem(SESSION_KEY,"1");
-			window.location.href = "index.html";
+			window.location.href = "../../index.html";
 		}else{
 			msg.textContent = "Identifiant ou mot de passe incorrect.";
 		}

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Calendrier de l'Akatsuki</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Le Calendrier de l'Akatsuki</title>
 
 	<script>
 		const SESSION_KEY = "intranet_auth_ok_v2";
@@ -51,7 +51,7 @@
 
 <script>
 	async function loadICS() {
-		const res = await fetch('emploi.ics');
+		const res = await fetch('./emploi-du-temps/emploi.ics');
 		const icsText = await res.text();
 		const events = parseICS(icsText);
 		return events.sort((a, b) => a.start - b.start);

@@ -15,5 +15,5 @@ function requireAuth() {
  */
 function logout() {
 	sessionStorage.removeItem(SESSION_KEY);
-	window.location.href = "../html/login.html";
+	window.location.href = "src/html/login.html";
 }

@@ -126,11 +126,6 @@
 		font-style: italic;
 	}
 
-	.home-btn-container button:hover {
-	background: #d32f2f;
-	transform: scale(1.05);
-}
-
 	@media (max-width: 1200px) {
 		.calendar-grid {
 			grid-template-columns: repeat(3, 1fr);

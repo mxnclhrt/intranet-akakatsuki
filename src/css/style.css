@@ -253,6 +253,7 @@ button:hover {
 .error {
     color:#ff5555;
     margin-top:0.6rem;
+    text-align:center;
 }
 
 /* --- Header actions --- */
@@ -283,8 +284,9 @@ button:hover {
     transition: 0.2s;
 }
 
-button:hover {
-    filter: brightness(1.2);
+.home-btn-container button:hover {
+	background: #d32f2f;
+	transform: scale(1.05);
 }
 
 /* ========================================================== */

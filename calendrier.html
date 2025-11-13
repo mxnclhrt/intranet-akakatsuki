@@ -44,6 +44,18 @@
 	<div class="calendar-grid" id="calendar"></div>
 </main>
 
+<script>
+const buttons = document.querySelectorAll(".group-btn");
+buttons.forEach(btn => {
+	btn.addEventListener("click", () => {
+		buttons.forEach(b => b.classList.remove("selected"));
+		btn.classList.add("selected");
+		console.log("Groupe choisi :", btn.dataset.groupe);
+		// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
+	});
+});
+</script>
+
 <div class="home-btn-container">
 	<button onclick="window.location.href='index.html';">
 		Accueil de l'Intranet
@@ -53,18 +65,6 @@
 <footer>
 	<p>&copy; 2025 Akatsuki Intranet</p>
 </footer>
-
-<script>
-	const buttons = document.querySelectorAll(".group-btn");
-	buttons.forEach(btn => {
-	btn.addEventListener("click", () => {
-		buttons.forEach(b => b.classList.remove("selected"));
-		btn.classList.add("selected");
-		console.log("Groupe choisi :", btn.dataset.groupe);
-		// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
-	});
-	});
-</script>
 
 <script>
 	async function loadICS() {

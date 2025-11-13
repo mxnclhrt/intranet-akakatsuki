@@ -130,6 +130,13 @@ main {
     max-width: 600px;
 }
 
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .nav-btn {
     display: block;
     padding: 12px 20px;

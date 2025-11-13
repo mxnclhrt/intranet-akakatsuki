@@ -130,13 +130,6 @@ main {
     max-width: 600px;
 }
 
-.buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
 .nav-btn {
     display: block;
     padding: 12px 20px;
@@ -149,7 +142,8 @@ main {
 }
 
 .nav-btn:hover {
-    background-color: #c0392b;
+    background: #d32f2f;
+    transform: scale(1.05);
 }
 
 /* --- Titres --- */

@@ -147,25 +147,23 @@
 
 
 .group-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .group-btn {
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
-  border: 2px solid #f44336;
-  border-radius: 6px;
-  background: #111; /* fond noir par défaut */
-  color: #eee;
-  cursor: pointer;
-  transition: 0.2s;
+    padding: 10px 20px;
+    border: 2px solid #f44336;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .group-btn.selected {
-  background: #f44336; /* fond rouge quand sélectionné */
-  color: #fff;
-  transform: scale(1.05);
+    background-color: #f44336;
 }
+

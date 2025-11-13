@@ -31,9 +31,10 @@
 
 <main>
 	<div class="group-buttons">
-		<button class="group-btn" data-groupe="INFOG1">G1</button>
+		<button class="group-btn selected" data-groupe="INFOG1">G1</button>
 		<button class="group-btn" data-groupe="INFOG2">G2</button>
 	</div>
+
 
 	<div class="controls">
 		<button id="prevWeek">◀ Semaine précédente</button>
@@ -44,16 +45,20 @@
 </main>
 
 <script>
-const buttons = document.querySelectorAll(".group-btn");
-buttons.forEach(btn => {
-	btn.addEventListener("click", () => {
-		buttons.forEach(b => b.classList.remove("selected"));
-		btn.classList.add("selected");
-		console.log("Groupe choisi :", btn.dataset.groupe);
-		// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
+	const buttons = document.querySelectorAll(".group-btn");
+
+	buttons.forEach(btn => {
+		btn.addEventListener("click", () => {
+			// Supprime la sélection sur tous
+			buttons.forEach(b => b.classList.remove("selected"));
+			// Ajoute la sélection au bouton cliqué
+			btn.classList.add("selected");
+			console.log("Groupe choisi :", btn.dataset.groupe);
+			// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
+		});
 	});
-});
 </script>
+
 
 <div class="home-btn-container">
 	<button onclick="window.location.href='index.html';">

@@ -41,22 +41,6 @@
 	<div class="calendar-grid" id="calendar"></div>
 </main>
 
-<script>
-	const buttons = document.querySelectorAll(".group-btn");
-
-	buttons.forEach(btn => {
-		btn.addEventListener("click", () => {
-			// Supprime la sélection sur tous
-			buttons.forEach(b => b.classList.remove("selected"));
-			// Ajoute la sélection au bouton cliqué
-			btn.classList.add("selected");
-			console.log("Groupe choisi :", btn.dataset.groupe);
-			// Ici tu peux filtrer ton calendrier selon btn.dataset.groupe
-		});
-	});
-</script>
-
-
 <div class="home-btn-container">
 	<button onclick="window.location.href='../../index.html';">
 		Accueil de l'Intranet
@@ -68,13 +52,69 @@
 </footer>
 
 <script>
-	async function loadICS() {
-		const res = await fetch('../emploi-du-temps/emploi-du-temps-G2.ics');
+	// Variables globales
+	let allEvents = [];
+	let currentWeek = null;
+	let currentGroup = 'G2'; // Groupe par défaut
+
+	// ===== GESTION DES BOUTONS DE GROUPE =====
+	const buttons = document.querySelectorAll(".group-btn");
+
+	buttons.forEach(btn => {
+		btn.addEventListener("click", async () => {
+			const selectedGroup = btn.dataset.groupe;
+			
+			// Si c'est déjà le groupe sélectionné, ne rien faire
+			if (selectedGroup === currentGroup) return;
+			
+			// Mise à jour visuelle
+			buttons.forEach(b => b.classList.remove("selected"));
+			btn.classList.add("selected");
+			
+			// Mise à jour du groupe
+			currentGroup = selectedGroup;
+			console.log("📅 Chargement du groupe :", currentGroup);
+			
+			// Recharger les événements
+			await loadAndDisplayICS(currentGroup);
+		});
+	});
+
+	// ===== CHARGEMENT DES FICHIERS ICS =====
+	async function loadICS(group) {
+		const filename = `emploi-du-temps-${group}.ics`;
+		const res = await fetch(`../emploi-du-temps/${filename}`);
+		
+		if (!res.ok) {
+			console.error(`❌ Erreur de chargement du fichier ${filename}`);
+			return [];
+		}
+		
 		const icsText = await res.text();
 		const events = parseICS(icsText);
 		return events.sort((a, b) => a.start - b.start);
 	}
 
+	async function loadAndDisplayICS(group) {
+		const events = await loadICS(group);
+		allEvents = events;
+		
+		if (events.length > 0) {
+			// Si on n'a pas encore de semaine, prendre la semaine actuelle
+			if (!currentWeek) {
+				currentWeek = getWeekNumber(new Date());
+			}
+			displayWeek(allEvents, currentWeek);
+		} else {
+			document.getElementById('calendar').innerHTML = `
+				<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #e94560;">
+					❌ Aucun événement trouvé pour le groupe ${group}
+				</div>
+			`;
+		}
+	}
+
+	// ===== PARSING ICS =====
 	function parseICS(text) {
 		const lines = text.split('\n');
 		const events = [];
@@ -100,7 +140,6 @@
 		return events;
 	}
 
-	// ✅ Correction ici : détection du fuseau et conversion UTC → local
 	function parseICSDate(line) {
 		const [meta, value] = line.split(':');
 		if (!value) return null;
@@ -112,7 +151,6 @@
 			const day = +value.slice(6, 8);
 			const hour = +value.slice(9, 11);
 			const minute = +value.slice(11, 13);
-			// On crée la date en UTC, JS la convertira en locale automatiquement
 			return new Date(Date.UTC(year, month, day, hour, minute));
 		}
 
@@ -123,11 +161,10 @@
 			const day = +value.slice(6, 8);
 			const hour = +value.slice(9, 11);
 			const minute = +value.slice(11, 13);
-			// Pas besoin de conversion, c’est déjà local
 			return new Date(year, month, day, hour, minute);
 		}
 
-		// Sinon, on suppose que c’est une heure locale
+		// Sinon, on suppose que c'est une heure locale
 		const year = +value.slice(0, 4);
 		const month = +value.slice(4, 6) - 1;
 		const day = +value.slice(6, 8);
@@ -136,6 +173,7 @@
 		return new Date(year, month, day, hour, minute);
 	}
 
+	// ===== GESTION DES SEMAINES =====
 	function getWeekNumber(date) {
 		const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
 		const dayNum = d.getUTCDay() || 7;
@@ -163,6 +201,7 @@
 		return days;
 	}
 
+	// ===== AFFICHAGE DU CALENDRIER =====
 	function displayWeek(events, week) {
 		const container = document.getElementById('calendar');
 		container.innerHTML = '';
@@ -218,17 +257,7 @@
 		});
 	}
 
-	let allEvents = [];
-	let currentWeek = null;
-
-	loadICS().then(events => {
-		allEvents = events;
-		if (events.length > 0) {
-			currentWeek = getWeekNumber(new Date());
-			displayWeek(allEvents, currentWeek);
-		}
-	});
-
+	// ===== NAVIGATION SEMAINE =====
 	document.getElementById('prevWeek').addEventListener('click', () => {
 		currentWeek--;
 		displayWeek(allEvents, currentWeek);
@@ -238,6 +267,9 @@
 		currentWeek++;
 		displayWeek(allEvents, currentWeek);
 	});
+
+	// ===== CHARGEMENT INITIAL =====
+	loadAndDisplayICS(currentGroup);
 </script>
 
 </body>

@@ -1,0 +1,65 @@
+/* Styles spécifiques pour centrer la boîte de connexion et l'adapter au thème sombre */
+body { 
+	display:flex; 
+	justify-content:center; 
+	align-items:center; 
+	height:100vh; 
+}
+
+/* Ajustement de la boîte de connexion pour le thème Akatsuki */
+.login-box { 
+	background: rgba(31, 31, 31, 0.95); /* Fond sombre, légèrement transparent */
+	padding:2rem; 
+	border-radius:10px; 
+	box-shadow:0 4px 20px rgba(0,0,0,0.5); 
+	max-width:350px; 
+	width:100%; 
+	border: 2px solid #f44336; /* Bordure rouge Akatsuki */
+	color: #eee; /* Texte clair */
+}
+
+.login-box h2 {
+	color: #f44336; /* Titre rouge Akatsuki */
+	text-align: center;
+	margin-top: 0;
+}
+
+label { 
+	display:block; 
+	margin-top:1rem; 
+	font-weight:600; 
+	color: #eee;
+}
+
+input { 
+	width:100%; 
+	padding:0.5rem; 
+	margin-top:0.25rem; 
+	border:1px solid #f44336; 
+	border-radius:6px; 
+	box-sizing:border-box; 
+	background: #1f1f1f; /* Fond d'input très sombre */
+	color: #fff; /* Texte d'input blanc */
+}
+
+button { 
+	margin-top:1.5rem; 
+	width:100%; 
+	padding:0.6rem; 
+	background:#f44336; /* Bouton rouge Akatsuki */
+	color:white; 
+	border:none; 
+	border-radius:5px; 
+	cursor:pointer;
+	transition: 0.2s; 
+}
+
+button:hover {
+	filter: brightness(1.2); /* Effet de survol Akatsuki */
+}
+
+.error { 
+	color:#ff5555; /* Message d'erreur rouge */
+	margin-top:0.8rem; 
+	text-align:center; 
+}

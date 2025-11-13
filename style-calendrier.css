@@ -147,23 +147,24 @@
 
 
 .group-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 20px;
 }
 
 .group-btn {
-    padding: 10px 20px;
-    border: 2px solid #f44336;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.2s;
+	padding: 10px 20px;
+	border: 2px solid #f44336;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: 0.2s;
 }
 
 .group-btn.selected {
-    background-color: #f44336;
+	background-color: #f44336;
 }
 

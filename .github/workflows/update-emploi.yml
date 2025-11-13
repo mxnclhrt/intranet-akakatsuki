@@ -18,7 +18,7 @@ jobs:
 
       - name: 📥 Télécharger le fichier ICS
         run: |
-          curl -L -o emploi.ics "https://hplanning.univ-lehavre.fr/Telechargements/ical/Edt_INFOG2.ics?version=2022.0.5.0&idICal=44AB2688C2CC0095C8BC88B7F49766AD&param=643d5b312e2e36325d2666683d3126663d31"
+          curl -L -o ./emploi-du-temps/emploi.ics "https://hplanning.univ-lehavre.fr/Telechargements/ical/Edt_INFOG2.ics?version=2022.0.5.0&idICal=44AB2688C2CC0095C8BC88B7F49766AD&param=643d5b312e2e36325d2666683d3126663d31"
 
       - name: 💾 Commit et push si modification
         env:

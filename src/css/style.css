@@ -11,11 +11,11 @@ body {
 
     /* 15 NUAGES EN FOND (Le 16ème est le lien cliquable en HTML, à 5% 5%) */
     background-image:
-            url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'),
-            url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'),
-            url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'),
-            url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'),
-            url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'), url('img/Akatsuki-Logo.png'); /* 15 URLs */
+            url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'),
+            url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'),
+            url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'),
+            url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'),
+            url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'), url('../img/Akatsuki-Logo.png'); /* 15 URLs */
 
     background-repeat: no-repeat;
 
@@ -39,7 +39,7 @@ body {
     height: 80px;
 
     /* VÉRIFIEZ LE CHEMIN VERS L'IMAGE ! */
-    background-image: url('img/Akatsuki-Logo.png');
+    background-image: url('../img/Akatsuki-Logo.png');
     background-size: contain;
     background-repeat: no-repeat;
 

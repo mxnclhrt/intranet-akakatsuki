@@ -5,28 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Intranet Collaboratif</title>
 
+	<script src="src/js/auth.js"></script>
 	<script>
-		const SESSION_KEY = "intranet_auth_ok_v2";
-		if(!sessionStorage.getItem(SESSION_KEY)){
-			window.location.href = "./src/html/login.html";
-		}
+		requireAuth(); // 🔒 Vérifie que l’utilisateur est bien connecté
 	</script>
 
-	<link rel="icon" type="image/png" href="./src/img/Akatsuki-Logo.svg"/> 
-	<link rel="stylesheet" href="./src/css/style.css">
+	<link rel="icon" type="image/png" href="src/img/Akatsuki-Logo.svg"/> 
+	<link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
 
 
-<a href="./src/html/secret.html" class="clickable-cloud" aria-label="Lien caché dans un nuage Akatsuki"></a>
+<a href="src/html/secret.html" class="clickable-cloud" aria-label="Lien caché dans un nuage Akatsuki"></a>
 
 <header>
 	<div class="header-content">
-		<img src="./src/img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
+		<img src="src/img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
 		<div class="header-text">
 			<h1>Bienvenue sur l’Intranet de l'Akakatsuki</h1>
 		</div>
-		<img src="./src/img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
+		<img src="src/img/Akatsuki-Logo.png" alt="Logo Akatsuki" class="logo">
 	</div>
 	<div class="header-actions">
 		<button id="logoutBtn" style="display:none;">Se déconnecter</button>
@@ -36,16 +34,14 @@
 <main>
 	<div class="center-buttons">
 		<div class="buttons-container">
-			<a href="./src/html/membres.html" class="nav-btn">Membres de l'Akakatsuki</a>
-			<a href="./src/html/calendrier.html" class="nav-btn">Calendrier de l'Akakatsuki</a>
+			<a href="src/html/membres.html" class="nav-btn">Membres de l'Akakatsuki</a>
+			<a href="src/html/calendrier.html" class="nav-btn">Calendrier de l'Akakatsuki</a>
 		</div>
 	</div>
 </main>
 
 <div class="logout-container">
-	<button onclick="sessionStorage.removeItem('intranet_auth_ok_v2'); window.location.href='./src/html/login.html';">
-		Se déconnecter
-	</button>
+	<button onclick="logout()">Se déconnecter</button>
 </div>
 
 <footer>

@@ -186,7 +186,8 @@ button.secondary {
 }
 
 button:hover {
-    filter: brightness(1.2);
+    background: #d32f2f;
+	transform: scale(1.05);
 }
 
 /* --- Hints --- */
